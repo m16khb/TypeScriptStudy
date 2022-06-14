@@ -40,3 +40,45 @@ let 학교: { score: (number | boolean)[]; teacher: string; friend: string | str
 };
 학교.score[4] = false;
 학교.friend = ['Lee', 학교.teacher];
+
+function 함수(x?: number | string): number {
+	if (typeof x === 'number') return 2 * x;
+	return 0;
+}
+console.log(함수(30));
+
+function hello(name?: string): void {
+	if (name) {
+		console.log(`안녕하세요 ${name}`);
+		return;
+	}
+	console.log('이름이 없습니다.');
+}
+
+hello('하빈');
+hello();
+
+function 자릿수(x: number | string): void {
+	if (typeof x === 'number') {
+		console.log(x.toString().length);
+	} else {
+		console.log(x.length);
+	}
+}
+
+자릿수(12345);
+자릿수('12345678');
+
+function canMarry(salary: number, house: boolean, charm: string): string | void {
+	let total: number = 0;
+	total += salary;
+	house ? (total += 500) : null;
+	charm === '상' ? (total += 100) : null;
+	if (total >= 600) {
+		return '결혼가능';
+	}
+}
+
+console.log(canMarry(230, false, '하'));
+console.log(canMarry(300, false, '상'));
+console.log(canMarry(300, true, '하'));

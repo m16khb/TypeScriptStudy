@@ -36,3 +36,40 @@ var 학교 = {
 };
 학교.score[4] = false;
 학교.friend = ['Lee', 학교.teacher];
+function 함수(x) {
+    if (typeof x === 'number')
+        return 2 * x;
+    return 0;
+}
+console.log(함수(30));
+function hello(name) {
+    if (name) {
+        console.log("\uC548\uB155\uD558\uC138\uC694 ".concat(name));
+        return;
+    }
+    console.log('이름이 없습니다.');
+}
+hello('하빈');
+hello();
+function 자릿수(x) {
+    if (typeof x === 'number') {
+        console.log(x.toString().length);
+    }
+    else {
+        console.log(x.length);
+    }
+}
+자릿수(12345);
+자릿수('12345678');
+function canMarry(salary, house, charm) {
+    var total = 0;
+    total += salary;
+    house ? (total += 500) : null;
+    charm === '상' ? (total += 100) : null;
+    if (total >= 600) {
+        return '결혼가능';
+    }
+}
+console.log(canMarry(230, false, '하'));
+console.log(canMarry(300, false, '상'));
+console.log(canMarry(300, true, '하'));
