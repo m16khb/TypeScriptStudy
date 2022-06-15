@@ -58,12 +58,22 @@ function hello(name?: string): void {
 hello('하빈');
 hello();
 
+//type narrowing
 function 자릿수(x: number | string): void {
 	if (typeof x === 'number') {
 		console.log(x.toString().length);
 	} else {
 		console.log(x.length);
 	}
+}
+
+//type assertion
+//1. narrowing 할 때 쓴다.
+//엥간하면 if문 typeof 쓰는 게 좋음 (버그 추적을 위해)
+//보통 디버깅 할 때 씀
+function myfunction(x: number | string): void {
+	let array: number[] = [];
+	array[0] = x as number;
 }
 
 자릿수(12345);
@@ -82,3 +92,40 @@ function canMarry(salary: number, house: boolean, charm: string): string | void 
 console.log(canMarry(230, false, '하'));
 console.log(canMarry(300, false, '상'));
 console.log(canMarry(300, true, '하'));
+
+let complex = ['1', 2, '3'];
+function cleaning(array: (number | string)[]): number[] {
+	// map 사용
+	// let numberArray = array.map((el) => {
+	// 	if (typeof el === 'number') {
+	// 		return el;
+	// 	}
+	// 	return Number(el);
+	// });
+	// console.log(numberArray);
+
+	//foreach 사용
+	let numberArray: number[] = [];
+	array.forEach((el) => {
+		if (typeof el === 'number') {
+			numberArray.push(el);
+		} else {
+			numberArray.push(Number(el));
+		}
+	});
+	return numberArray;
+}
+console.log(cleaning(complex));
+
+let 철수쌤 = { subject: 'math' };
+let 영희쌤 = { subject: ['science', 'english'] };
+let 민수쌤 = { subject: ['science', 'art', 'korean'] };
+
+function lastLecture(teachLecture: { subject: string | string[] }): string {
+	if (typeof teachLecture.subject === 'string') {
+		return teachLecture.subject;
+	} else {
+		return teachLecture.subject[teachLecture.subject.length - 1];
+	}
+}
+console.log(lastLecture(민수쌤));
