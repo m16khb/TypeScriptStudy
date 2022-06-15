@@ -117,3 +117,11 @@ function lastLecture(teachLecture) {
     }
 }
 console.log(lastLecture(민수쌤));
+var 동물;
+var 사람 = { name: 'kim', age: 20 };
+var spiderMan = {
+    name: '피터 파커',
+};
+var position = { x: 10, y: 20 };
+var xyz = { x: 10, y: 20, z: 30 };
+var person;

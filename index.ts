@@ -129,3 +129,41 @@ function lastLecture(teachLecture: { subject: string | string[] }): string {
 	}
 }
 console.log(lastLecture(민수쌤));
+
+//type alias(파스칼케이스 사용)
+type Animal = string | number | undefined;
+type Identity = { name: string; age: number };
+let 동물: Animal;
+let 사람: Identity = { name: 'kim', age: 20 };
+
+//readonly 속성
+type Avengers = { readonly name: string };
+const spiderMan: Avengers = {
+	name: '피터 파커',
+};
+
+//type union
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+
+type PositionX = { x: number };
+type PositionY = { y: number };
+//{x:number , y:number}
+type PositionXY = PositionX & PositionY;
+let position: PositionXY = { x: 10, y: 20 };
+//타입은 재정의 불가능
+
+type PositionZ = { x: number; z: number };
+type PositionXYZ = PositionXY & PositionZ;
+let xyz: PositionXYZ = { x: 10, y: 20, z: 30 };
+
+// 1. 이 타입은 object 자료형이어야합니다.
+// 2. 이 타입은 color 라는 속성을 가질 수도 있으며 항상 문자가 들어와야합니다.
+// 3. 이 타입은 size 라는 속성이 있어야하며 항상 숫자가 들어와야합니다.
+// 4. 이 타입은 position 이라는 변경불가능한 속성이 있어야하며 항상 숫자가 담긴 array 자료가 들어와야합니다.
+type Mine = { color?: string; size: number; readonly position: number[] };
+type Inspection = { name: string; phone: number; email?: string };
+type Adult = { adult: boolean };
+type InspectionAdult = Inspection & Adult;
+let person: InspectionAdult;
