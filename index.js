@@ -125,3 +125,4 @@ var spiderMan = {
 var position = { x: 10, y: 20 };
 var xyz = { x: 10, y: 20, z: 30 };
 var person;
+console.log('test');

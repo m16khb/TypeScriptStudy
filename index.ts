@@ -167,3 +167,5 @@ type Inspection = { name: string; phone: number; email?: string };
 type Adult = { adult: boolean };
 type InspectionAdult = Inspection & Adult;
 let person: InspectionAdult;
+
+console.log('test');
