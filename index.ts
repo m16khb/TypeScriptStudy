@@ -168,4 +168,25 @@ type Adult = { adult: boolean };
 type InspectionAdult = Inspection & Adult;
 let person: InspectionAdult;
 
-console.log('test');
+//literal type
+let lit: 'kim' | 'lee' | 'park';
+lit = 'kim';
+lit = 'lee';
+lit = 'park';
+
+function rsp(hand: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
+	return [];
+}
+
+console.log(rsp('바위'));
+
+//as const
+//1.이 object는 literal type지정을 해주세요
+//2.이 object는 readonly에요
+var 자료 = {
+	name: 'kim',
+} as const;
+
+function 내함수(a: 'kim') {}
+
+내함수(자료.name);
