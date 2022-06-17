@@ -190,3 +190,4 @@ var 자료 = {
 function 내함수(a: 'kim') {}
 
 내함수(자료.name);
+console.log('test')
