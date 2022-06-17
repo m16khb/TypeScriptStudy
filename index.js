@@ -1,16 +1,19 @@
-var 이름 = '김하빈';
+var 이름 = "김하빈";
 var 나이 = 27;
-var 고향 = '인천';
-var 노래 = { 곡: '잘됐으면좋겠다', 가수: '홍대광' };
+var 고향 = "인천";
+var 노래 = {
+    곡: "잘됐으면좋겠다",
+    가수: "홍대광",
+};
 var project = {
-    member: ['kim', 'park'],
+    member: ["kim", "park"],
     days: 30,
     started: true,
 };
 var 회원 = 123;
-회원 = 'vip';
-var 회원들 = [1, '2', 3];
-var 오브젝트 = { a: '123' };
+회원 = "vip";
+var 회원들 = [1, "2", 3];
+var 오브젝트 = { a: "123" };
 오브젝트.a = 123;
 /*
 let 이름2: any;
@@ -25,19 +28,19 @@ var 이름2;
 //이름 - 1;
 var 나이2 = 1;
 나이2 = 나이2 + 1;
-var user = 'kim';
+var user = "kim";
 var age = undefined;
 var married = false;
 var 철수 = [user, age, married];
 var 학교 = {
     score: [100, 97, 84],
-    teacher: 'Phil',
-    friend: 'John',
+    teacher: "Phil",
+    friend: "John",
 };
 학교.score[4] = false;
-학교.friend = ['Lee', 학교.teacher];
+학교.friend = ["Lee", 학교.teacher];
 function 함수(x) {
-    if (typeof x === 'number')
+    if (typeof x === "number")
         return 2 * x;
     return 0;
 }
@@ -47,13 +50,13 @@ function hello(name) {
         console.log("\uC548\uB155\uD558\uC138\uC694 ".concat(name));
         return;
     }
-    console.log('이름이 없습니다.');
+    console.log("이름이 없습니다.");
 }
-hello('하빈');
+hello("하빈");
 hello();
 //type narrowing
 function 자릿수(x) {
-    if (typeof x === 'number') {
+    if (typeof x === "number") {
         console.log(x.toString().length);
     }
     else {
@@ -69,20 +72,20 @@ function myfunction(x) {
     array[0] = x;
 }
 자릿수(12345);
-자릿수('12345678');
+자릿수("12345678");
 function canMarry(salary, house, charm) {
     var total = 0;
     total += salary;
     house ? (total += 500) : null;
-    charm === '상' ? (total += 100) : null;
+    charm === "상" ? (total += 100) : null;
     if (total >= 600) {
-        return '결혼가능';
+        return "결혼가능";
     }
 }
-console.log(canMarry(230, false, '하'));
-console.log(canMarry(300, false, '상'));
-console.log(canMarry(300, true, '하'));
-var complex = ['1', 2, '3'];
+console.log(canMarry(230, false, "하"));
+console.log(canMarry(300, false, "상"));
+console.log(canMarry(300, true, "하"));
+var complex = ["1", 2, "3"];
 function cleaning(array) {
     // map 사용
     // let numberArray = array.map((el) => {
@@ -95,7 +98,7 @@ function cleaning(array) {
     //foreach 사용
     var numberArray = [];
     array.forEach(function (el) {
-        if (typeof el === 'number') {
+        if (typeof el === "number") {
             numberArray.push(el);
         }
         else {
@@ -105,11 +108,11 @@ function cleaning(array) {
     return numberArray;
 }
 console.log(cleaning(complex));
-var 철수쌤 = { subject: 'math' };
-var 영희쌤 = { subject: ['science', 'english'] };
-var 민수쌤 = { subject: ['science', 'art', 'korean'] };
+var 철수쌤 = { subject: "math" };
+var 영희쌤 = { subject: ["science", "english"] };
+var 민수쌤 = { subject: ["science", "art", "korean"] };
 function lastLecture(teachLecture) {
-    if (typeof teachLecture.subject === 'string') {
+    if (typeof teachLecture.subject === "string") {
         return teachLecture.subject;
     }
     else {
@@ -118,11 +121,27 @@ function lastLecture(teachLecture) {
 }
 console.log(lastLecture(민수쌤));
 var 동물;
-var 사람 = { name: 'kim', age: 20 };
+var 사람 = { name: "kim", age: 20 };
 var spiderMan = {
-    name: '피터 파커',
+    name: "피터 파커",
 };
 var position = { x: 10, y: 20 };
 var xyz = { x: 10, y: 20, z: 30 };
 var person;
-console.log('test');
+//literal type
+var lit;
+lit = "kim";
+lit = "lee";
+lit = "park";
+function rsp(hand) {
+    return [];
+}
+console.log(rsp("바위"));
+//as const
+//1.이 object는 literal type지정을 해주세요
+//2.이 object는 readonly에요
+var 자료 = {
+    name: "kim",
+};
+function 내함수(a) { }
+내함수(자료.name);
