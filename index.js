@@ -1,19 +1,19 @@
-var 이름 = "김하빈";
-var 나이 = 27;
-var 고향 = "인천";
-var 노래 = {
+let 이름 = "김하빈";
+let 나이 = 27;
+let 고향 = "인천";
+let 노래 = {
     곡: "잘됐으면좋겠다",
     가수: "홍대광",
 };
-var project = {
+let project = {
     member: ["kim", "park"],
     days: 30,
     started: true,
 };
-var 회원 = 123;
+let 회원 = 123;
 회원 = "vip";
-var 회원들 = [1, "2", 3];
-var 오브젝트 = { a: "123" };
+let 회원들 = [1, "2", 3];
+let 오브젝트 = { a: "123" };
 오브젝트.a = 123;
 /*
 let 이름2: any;
@@ -21,18 +21,18 @@ let 이름2: any;
 이름2 = true;
 */
 //unknown의 경우 any보다 타입에 대해 안전하다.
-var 이름2;
+let 이름2;
 이름2 = 123;
 이름2 = {};
 //let 변수1: string = 이름2;
 //이름 - 1;
-var 나이2 = 1;
+let 나이2 = 1;
 나이2 = 나이2 + 1;
-var user = "kim";
-var age = undefined;
-var married = false;
-var 철수 = [user, age, married];
-var 학교 = {
+let user = "kim";
+let age = undefined;
+let married = false;
+let 철수 = [user, age, married];
+let 학교 = {
     score: [100, 97, 84],
     teacher: "Phil",
     friend: "John",
@@ -47,7 +47,7 @@ function 함수(x) {
 console.log(함수(30));
 function hello(name) {
     if (name) {
-        console.log("\uC548\uB155\uD558\uC138\uC694 ".concat(name));
+        console.log(`안녕하세요 ${name}`);
         return;
     }
     console.log("이름이 없습니다.");
@@ -68,13 +68,13 @@ function 자릿수(x) {
 //엥간하면 if문 typeof 쓰는 게 좋음 (버그 추적을 위해)
 //보통 디버깅 할 때 씀
 function myfunction(x) {
-    var array = [];
+    let array = [];
     array[0] = x;
 }
 자릿수(12345);
 자릿수("12345678");
 function canMarry(salary, house, charm) {
-    var total = 0;
+    let total = 0;
     total += salary;
     house ? (total += 500) : null;
     charm === "상" ? (total += 100) : null;
@@ -85,7 +85,7 @@ function canMarry(salary, house, charm) {
 console.log(canMarry(230, false, "하"));
 console.log(canMarry(300, false, "상"));
 console.log(canMarry(300, true, "하"));
-var complex = ["1", 2, "3"];
+let complex = ["1", 2, "3"];
 function cleaning(array) {
     // map 사용
     // let numberArray = array.map((el) => {
@@ -96,8 +96,8 @@ function cleaning(array) {
     // });
     // console.log(numberArray);
     //foreach 사용
-    var numberArray = [];
-    array.forEach(function (el) {
+    let numberArray = [];
+    array.forEach((el) => {
         if (typeof el === "number") {
             numberArray.push(el);
         }
@@ -108,9 +108,9 @@ function cleaning(array) {
     return numberArray;
 }
 console.log(cleaning(complex));
-var 철수쌤 = { subject: "math" };
-var 영희쌤 = { subject: ["science", "english"] };
-var 민수쌤 = { subject: ["science", "art", "korean"] };
+let 철수쌤 = { subject: "math" };
+let 영희쌤 = { subject: ["science", "english"] };
+let 민수쌤 = { subject: ["science", "art", "korean"] };
 function lastLecture(teachLecture) {
     if (typeof teachLecture.subject === "string") {
         return teachLecture.subject;
@@ -120,16 +120,16 @@ function lastLecture(teachLecture) {
     }
 }
 console.log(lastLecture(민수쌤));
-var 동물;
-var 사람 = { name: "kim", age: 20 };
-var spiderMan = {
+let 동물;
+let 사람 = { name: "kim", age: 20 };
+const spiderMan = {
     name: "피터 파커",
 };
-var position = { x: 10, y: 20 };
-var xyz = { x: 10, y: 20, z: 30 };
-var person;
+let position = { x: 10, y: 20 };
+let xyz = { x: 10, y: 20, z: 30 };
+let person;
 //literal type
-var lit;
+let lit;
 lit = "kim";
 lit = "lee";
 lit = "park";
