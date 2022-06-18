@@ -88,7 +88,7 @@ let 선생: Teacher = { name: 'kim', age: 20 };
 console.log(학생);
 console.log(선생);
 
-type Animal = { name: string };
+//type Animal = { name: string };
 type Cat = { age: number } & Animal;
 
 //homework
