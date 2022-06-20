@@ -1,19 +1,19 @@
-let 이름: string = "김하빈";
+let 이름: string = '김하빈';
 let 나이: number = 27;
-let 고향: string = "인천";
+let 고향: string = '인천';
 let 노래: { 곡: string; 가수: string } = {
-  곡: "잘됐으면좋겠다",
-  가수: "홍대광",
+  곡: '잘됐으면좋겠다',
+  가수: '홍대광',
 };
 let project: { member: string[]; days: number; started: boolean } = {
-  member: ["kim", "park"],
+  member: ['kim', 'park'],
   days: 30,
   started: true,
 };
 let 회원: number | string = 123;
-회원 = "vip";
-let 회원들: (number | string)[] = [1, "2", 3];
-let 오브젝트: { a: string | number } = { a: "123" };
+회원 = 'vip';
+let 회원들: (number | string)[] = [1, '2', 3];
+let 오브젝트: { a: string | number } = { a: '123' };
 오브젝트.a = 123;
 
 /*
@@ -31,7 +31,7 @@ let 이름2: unknown;
 let 나이2: string | number = 1;
 나이2 = 나이2 + 1;
 
-let user: string = "kim";
+let user: string = 'kim';
 let age: undefined | number = undefined;
 let married: boolean = false;
 let 철수: (string | undefined | number | boolean)[] = [user, age, married];
@@ -42,14 +42,14 @@ let 학교: {
   friend: string | string[];
 } = {
   score: [100, 97, 84],
-  teacher: "Phil",
-  friend: "John",
+  teacher: 'Phil',
+  friend: 'John',
 };
 학교.score[4] = false;
-학교.friend = ["Lee", 학교.teacher];
+학교.friend = ['Lee', 학교.teacher];
 
 function 함수(x?: number | string): number {
-  if (typeof x === "number") return 2 * x;
+  if (typeof x === 'number') return 2 * x;
   return 0;
 }
 console.log(함수(30));
@@ -59,15 +59,15 @@ function hello(name?: string): void {
     console.log(`안녕하세요 ${name}`);
     return;
   }
-  console.log("이름이 없습니다.");
+  console.log('이름이 없습니다.');
 }
 
-hello("하빈");
+hello('하빈');
 hello();
 
 //type narrowing
 function 자릿수(x: number | string): void {
-  if (typeof x === "number") {
+  if (typeof x === 'number') {
     console.log(x.toString().length);
   } else {
     console.log(x.length);
@@ -84,7 +84,7 @@ function myfunction(x: number | string): void {
 }
 
 자릿수(12345);
-자릿수("12345678");
+자릿수('12345678');
 
 function canMarry(
   salary: number,
@@ -94,17 +94,17 @@ function canMarry(
   let total: number = 0;
   total += salary;
   house ? (total += 500) : null;
-  charm === "상" ? (total += 100) : null;
+  charm === '상' ? (total += 100) : null;
   if (total >= 600) {
-    return "결혼가능";
+    return '결혼가능';
   }
 }
 
-console.log(canMarry(230, false, "하"));
-console.log(canMarry(300, false, "상"));
-console.log(canMarry(300, true, "하"));
+console.log(canMarry(230, false, '하'));
+console.log(canMarry(300, false, '상'));
+console.log(canMarry(300, true, '하'));
 
-let complex = ["1", 2, "3"];
+let complex = ['1', 2, '3'];
 function cleaning(array: (number | string)[]): number[] {
   // map 사용
   // let numberArray = array.map((el) => {
@@ -118,7 +118,7 @@ function cleaning(array: (number | string)[]): number[] {
   //foreach 사용
   let numberArray: number[] = [];
   array.forEach((el) => {
-    if (typeof el === "number") {
+    if (typeof el === 'number') {
       numberArray.push(el);
     } else {
       numberArray.push(Number(el));
@@ -128,12 +128,12 @@ function cleaning(array: (number | string)[]): number[] {
 }
 console.log(cleaning(complex));
 
-let 철수쌤 = { subject: "math" };
-let 영희쌤 = { subject: ["science", "english"] };
-let 민수쌤 = { subject: ["science", "art", "korean"] };
+let 철수쌤 = { subject: 'math' };
+let 영희쌤 = { subject: ['science', 'english'] };
+let 민수쌤 = { subject: ['science', 'art', 'korean'] };
 
 function lastLecture(teachLecture: { subject: string | string[] }): string {
-  if (typeof teachLecture.subject === "string") {
+  if (typeof teachLecture.subject === 'string') {
     return teachLecture.subject;
   } else {
     return teachLecture.subject[teachLecture.subject.length - 1];
@@ -145,12 +145,12 @@ console.log(lastLecture(민수쌤));
 type Animal = string | number | undefined;
 type Identity = { name: string; age: number };
 let 동물: Animal;
-let 사람: Identity = { name: "kim", age: 20 };
+let 사람: Identity = { name: 'kim', age: 20 };
 
 //readonly 속성
 type Avengers = { readonly name: string };
 const spiderMan: Avengers = {
-  name: "피터 파커",
+  name: '피터 파커',
 };
 
 //type union
@@ -180,24 +180,30 @@ type InspectionAdult = Inspection & Adult;
 let person: InspectionAdult;
 
 //literal type
-let lit: "kim" | "lee" | "park";
-lit = "kim";
-lit = "lee";
-lit = "park";
+let lit: 'kim' | 'lee' | 'park';
+lit = 'kim';
+lit = 'lee';
+lit = 'park';
 
-function rsp(hand: "가위" | "바위" | "보"): ("가위" | "바위" | "보")[] {
+function rsp(hand: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
   return [];
 }
 
-console.log(rsp("바위"));
+console.log(rsp('바위'));
 
 //as const
 //1.이 object는 literal type지정을 해주세요
 //2.이 object는 readonly에요
 var 자료 = {
-  name: "kim",
+  name: 'kim',
 } as const;
 
-function 내함수(a: "kim") {}
+function 내함수(a: 'kim') {}
 
 내함수(자료.name);
+
+import { abc } from './a';
+console.log(abc);
+import { cde } from './a';
+let foo: cde = '123';
+console.log(typeof foo);
