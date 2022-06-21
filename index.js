@@ -151,3 +151,7 @@ const a_1 = require("./a");
 console.log(a_1.abc);
 let foo = '123';
 console.log(typeof foo);
+let 차차차 = { wheel: 4, model: 'bmw' };
+console.log(차차차);
+let 바이크 = { wheel: 2, model: 'honda' };
+console.log(바이크);

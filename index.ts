@@ -207,3 +207,10 @@ console.log(abc);
 import { cde } from './a';
 let foo: cde = '123';
 console.log(typeof foo);
+
+import { Car } from './vechile';
+let 차차차: Car = { wheel: 4, model: 'bmw' };
+console.log(차차차);
+import { Bike } from './vechile';
+let 바이크: Bike = { wheel: 2, model: 'honda' };
+console.log(바이크);
